@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="form">
+  <div class="container">
+    <form action="/post" method="post" class="form-inline">
+      <label for="input_id">名前</label>
+      <input type="text" class="form-control" name="input_id"  placeholder="id">
+      <button type="submit" class="btn btn-default">入力</button>
+    </form>
+
+    <form action="/download" method="post" class="form-inline">
+        <select class="dropdown-menu" name="value_date">
+            {% for date in value_dates%}            
+                <option value={{date}}> {{date}}</option>
+            {% endfor %}
+        </select>
+        <input type="text" class="form-control" name="input_report_id" placeholder="10digits">
+        <button type="submit" class="btn btn-default">ダウンロード</button>
+    </form>
+
+    <form action="/download" method="post" class="form-inline">
+      <label for="input_report_id">レポート</label>
+      <input type="text" class="form-control" name="input_report_id" placeholder="10digits">
+      <button type="submit" class="btn btn-default">ダウンロード</button>
+    </form>    
+  </div>
+</div>
+{% endblock %}
